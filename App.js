@@ -6,6 +6,7 @@ export default function App() {
     {id: "1" , titulo: "Aprender Git" },
     {id: "2" , titulo: "Aprender fazer commit"},
     {id: "3" , titulo: "Aprender utilizar o GitHub"},
+    {id: "4" , titulo: "Criar um Novo Commit"},
   ]
 
   return (
@@ -15,8 +16,7 @@ export default function App() {
         data={tarefas}
         keyExtractor={(item)=>item.id}
         renderItem={({item}) => (
-
-          <Text style={{color: 'white'}}> {item.titulo} </Text>
+          <Text style={styles.item}> {item.titulo} </Text>
         )}      
       
       />
@@ -34,5 +34,11 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     color: 'white',
     marginBottom: 20,
+  },
+  item:{
+    padding :15,
+    marginTop : 10,
+    backgroundColor : '#e25858ff',
+    borderRadius : 5
   }
 });

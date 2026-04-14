@@ -17,10 +17,12 @@ export default function App() {
     const [novatarefa,setnovaTarefa] = useState ('');
 
     function addTarefa(){
-      const task = [{
+      const novaTarefa = {
         id: String(Date.now()),
         titulo : novatarefa
-      }]
+      }
+      setTarefas([...tarefas,novaTarefa]);
+      setnovaTarefa("")
     }
 
   return (
@@ -41,7 +43,7 @@ export default function App() {
       placeholder='Digite uma Tarefa'
       placeholderTextColor="#888"
       textAlign='center'/>
-      <TouchableOpacity style={styles.btnAdicionar}><Text style={{color: 'white', fontWeight: 'bold'}}>Adicionar Tarefa</Text></TouchableOpacity>
+      <TouchableOpacity onPress={addTarefa} style={styles.btnAdicionar}><Text style={{color: 'white', fontWeight: 'bold'}}>Adicionar Tarefa</Text></TouchableOpacity>
     </View>
   );
 }
